@@ -4,12 +4,12 @@
 <% @portfolio_items.each do |portfolio| %>
   <div>
 
-    <h2><%= link_to portfolio.title, portfolio %></h2>
+    <h2><%= link_to portfolio.title, portfolio_show_path(portfolio) %></h2>
     <h4><%= portfolio.subtitle %></h4>
     <p><%= portfolio.body %></p>
     <%= image_tag portfolio.thumb_image if portfolio.thumb_image? %>
     <p>
-      <span><%= link_to "View", portfolio %></span>
+      <span><%= link_to "View", portfolio_show_path(portfolio) %></span>
       <span><%= link_to "Edit", edit_portfolio_path(portfolio) %></span>
       <span><%= link_to "Delete", portfolio, method: :delete, data: { confirm: 'Are you sure?' } %></span>
     </p>

@@ -22,5 +22,9 @@
 
 <% end %>
 <%= yield %>
+<hr>
+<% if session[:source] %>
+  Thanks for visiting me from <a href="<%= session[:source] %>"><%= session[:source] %></a>
+<% end %>
 </body>
 </html>

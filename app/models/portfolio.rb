@@ -1,13 +1,10 @@
 class Portfolio < ApplicationRecord
   has_many :technologies
+  accepts_nested_attributes_for :technologies,
+                                reject_if: ->(attrs) { attrs['name'].blank? }
+
   include Placeholder
   validates_presence_of :title, :subtitle, :body, :main_image, :thumb_image
-
-  def self.angular
-    where(
-      subtitle: 'Angular'
-    )
-  end
 
   scope :ruby_on_rails, -> { where(subtitle: 'Ruby on Rails') }
 

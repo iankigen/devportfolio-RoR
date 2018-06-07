@@ -8,6 +8,13 @@
     <h4><%= portfolio.subtitle %></h4>
     <p><%= portfolio.body %></p>
     <%= image_tag portfolio.thumb_image if portfolio.thumb_image? %>
+    <h4>Technologies Used</h4>
+    <% portfolio.technologies.each do |t| %>
+      <ul>
+        <li><%= t.name %></li>
+      </ul>
+
+    <% end %>
     <p>
       <span><%= link_to "View", portfolio_show_path(portfolio) %></span>
       <span><%= link_to "Edit", edit_portfolio_path(portfolio) %></span>

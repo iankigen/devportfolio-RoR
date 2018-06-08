@@ -14,7 +14,7 @@
 <p class="alert"><%= alert %></p>
 
 <hr>
-<%= render 'shared/nav' %>
+<%= render 'shared/nav', nav_class: 'top' %>
 <hr>
 
 <% if current_user.is_a?(User) %>

@@ -25,7 +25,7 @@
 <% end %>
 <%= yield %>
 <hr>
-<%= render 'shared/nav' %>
+<%= render 'shared/nav', nav_class: 'bottom' %>
 <hr>
 <% if session[:source] %>
   Thanks for visiting me from <a href="" target="_blank"><%= session[:source] %></a>

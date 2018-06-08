@@ -14,6 +14,8 @@
 <p class="alert"><%= alert %></p>
 
 <hr>
+<%= render 'shared/nav' %>
+<hr>
 
 <% if current_user.is_a?(User) %>
   <%= link_to "Logout", destroy_user_session_path, method: :delete %>
@@ -24,15 +26,7 @@
 
 <% end %>
 <%= yield %>
-<hr>
-<div>
-  <%= link_to "Home", root_path, method: :get %> |
-  <%= link_to "Blog", blogs_path, method: :get %> |
-  <%= link_to "Portfolio", portfolios_path, method: :get %> |
-  <%= link_to "Contact", contact_path, method: :get %> |
-  <%= link_to "About", about_path, method: :get %>
-</div>
-<hr>
+
 <% if session[:source] %>
   Thanks for visiting me from <a href="" target="_blank"><%= session[:source] %></a>
 <% end %>

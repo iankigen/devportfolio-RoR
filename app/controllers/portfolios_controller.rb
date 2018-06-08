@@ -5,10 +5,12 @@ class PortfoliosController < ApplicationController
 
   def index
     @portfolio_items = Portfolio.all
+    @page_title += " | #{params[:controller]}"
   end
 
   def new
     @portfolio_item = Portfolio.new
+    @page_title += " | #{params[:action]}"
     3.times {@portfolio_item.technologies.build}
   end
 
@@ -26,6 +28,7 @@ class PortfoliosController < ApplicationController
   end
 
   def edit
+    @page_title += " | #{params[:action]} #{@portfolio_item.title}"
   end
 
   def update
@@ -43,6 +46,8 @@ class PortfoliosController < ApplicationController
   end
 
   def show
+    @page_title += " | #{@portfolio_item.title}"
+    @seo_content = @portfolio_item.title
   end
 
   def destroy

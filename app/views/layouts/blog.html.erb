@@ -18,8 +18,6 @@
 <%= login_helper %>
 
 <%= yield %>
-<% if session[:source] %>
-  Thanks for visiting me from <a href="" target="_blank"><%= session[:source] %></a>
-<% end %>
+<%= source_helper %>
 </body>
 </html>

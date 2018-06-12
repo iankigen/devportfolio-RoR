@@ -12,10 +12,8 @@
 <body>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
-<%= render 'shared/nav', nav_class: 'top' %>
+<%= render 'shared/nav' %>
 <hr>
-
-<%= login_helper %>
 <%= yield %>
 <hr>
 <%= source_helper %>

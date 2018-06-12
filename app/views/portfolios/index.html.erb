@@ -1,24 +1,4 @@
 <h1>Portfolio Items</h1>
 
 <%= link_to "New Portfolio", new_portfolio_path %>
-<% @portfolio_items.each do |portfolio| %>
-  <div>
-
-    <h2><%= link_to portfolio.title, portfolio_show_path(portfolio) %></h2>
-    <h4><%= portfolio.subtitle %></h4>
-    <p><%= portfolio.body %></p>
-    <%= image_tag portfolio.thumb_image if portfolio.thumb_image? %>
-    <h4>Technologies Used</h4>
-    <% portfolio.technologies.each do |t| %>
-      <ul>
-        <li><%= t.name %></li>
-      </ul>
-
-    <% end %>
-    <p>
-      <span><%= link_to "View", portfolio_show_path(portfolio) %></span>
-      <span><%= link_to "Edit", edit_portfolio_path(portfolio) %></span>
-      <span><%= link_to "Delete", portfolio, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-    </p>
-  </div>
-<% end %>
+<%= render partial: 'portfolio_item', collection: @portfolio_items %>

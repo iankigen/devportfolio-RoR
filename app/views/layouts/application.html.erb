@@ -12,13 +12,21 @@
 </head>
 
 <body>
-<p class="notice"><%= notice.html_safe if notice %></p>
-<p class="alert"><%= alert %></p>
-<%= render 'shared/nav' %>
-<hr>
-<%= yield %>
-<hr>
-<%= copyright %>
-<%= source_helper %>
+<div class="site-wrapper">
+  <div class="site-wrapper-inner">
+    <div class="cover-container">
+      <%= render 'shared/application_nav' %>
+
+      <%= yield %>
+
+      <%= source_helper %>
+      <div class="mastfoot">
+        <div class="inner">
+          <p><%= copyright %></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </body>
 </html>

@@ -15,4 +15,8 @@ module ApplicationHelper
 
     end
   end
+
+  def copyright
+    "&copy; #{Time.now.year} | <b>Ian K</b> All rights reserved".html_safe
+  end
 end

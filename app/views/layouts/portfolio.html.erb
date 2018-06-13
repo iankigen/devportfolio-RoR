@@ -5,23 +5,18 @@
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
   <meta name="keywords" content="<%= @seo_content %>"/>
-  <%= stylesheet_link_tag 'portfolios', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'portfolios', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 
 <body>
-<p class="notice"><%= notice %></p>
+<p class="notice"><%= notice.html_safe if notice %></p>
 <p class="alert"><%= alert %></p>
-
+<%= render 'shared/nav' %>
 <hr>
-<%= render 'shared/nav', nav_class: 'top' %>
-<hr>
-
-<%= login_helper %>
-
 <%= yield %>
-
+<hr>
+<%= copyright %>
 <%= source_helper %>
-
 </body>
 </html>

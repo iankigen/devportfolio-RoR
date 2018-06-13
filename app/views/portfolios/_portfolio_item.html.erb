@@ -1,4 +1,5 @@
 <h2><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item) %></h2>
+<%= image_tag portfolio_item.thumb_image if portfolio_item.thumb_image? %>
 <h4><%= portfolio_item.subtitle %></h4>
 <p><%= portfolio_item.body %></p>
 <%= image_tag portfolio_item.thumb_image if portfolio_item.thumb_image? %>
@@ -10,6 +11,6 @@
 <% end %>
 <p>
   <span><%= link_to "View", portfolio_show_path(portfolio_item) %></span>
-  <span><%= link_to "Edit", edit_portfolio_path(portfolio_item) %></span>
-  <span><%= link_to "Delete", portfolio_item, method: :delete, data: {confirm: 'Are you sure?'} %></span>
+  <span><%= link_to "Edit", edit_portfolio_path(portfolio_item) if logged_in?(:site_admin)%></span>
+  <span><%= link_to "Delete", portfolio_item, method: :delete, data: {confirm: 'Are you sure?'} if logged_in?(:site_admin)%></span>
 </p>

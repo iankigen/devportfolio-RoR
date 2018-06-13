@@ -2,8 +2,8 @@
   <td><%= blog.title %></td>
   <td>Published <%= distance_of_time_in_words_to_now blog.created_at %> ago</td>
   <td><%= blog.body %></td>
-  <td><%= link_to blog.status, toggle_status_blog_path(blog) %></td>
+  <td><%= link_to blog.status, toggle_status_blog_path(blog) if logged_in?(:site_admin) %></td>
   <td><%= link_to 'View', blog %></td>
-  <td><%= link_to 'Update', edit_blog_path(blog) %></td>
-  <td><%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  <td><%= link_to 'Update', edit_blog_path(blog) if logged_in?(:site_admin)%></td>
+  <td><%= link_to 'Delete', blog, method: :delete, data: { confirm: 'Are you sure?' } if logged_in?(:site_admin)%></td>
 </tr>

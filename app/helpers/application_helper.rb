@@ -17,6 +17,6 @@ module ApplicationHelper
   end
 
   def copyright
-    "&copy; #{Time.now.year} | <b>Ian K</b> All rights reserved".html_safe
+    "&copy; #{Time.now.year} | <b>Ian Kigen</b> All rights reserved".html_safe
   end
 end

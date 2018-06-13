@@ -8,8 +8,8 @@
     <p><%= t.name %></p>
   <% end %>
   <p>
-    <span><%= link_to "Edit", edit_portfolio_path(@portfolio_item) %></span>
-    <span><%= link_to "Delete", @portfolio_item, method: :delete, data: {confirm: 'Are you sure?'} %></span>
+    <span><%= link_to "Edit", edit_portfolio_path(@portfolio_item) if logged_in?(:site_admin) %></span>
+    <span><%= link_to "Delete", @portfolio_item, method: :delete, data: {confirm: 'Are you sure?'} if logged_in?(:site_admin)%></span>
     <span><%= link_to "Back", portfolios_path %></span>
   </p>
 </div>

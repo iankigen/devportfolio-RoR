@@ -1,59 +1,52 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
-  # layout 'blog'
-
-  # GET /blogs
-  # GET /blogs.json
+  access all: [:show, :index], user: {except: [:destroy, :create, :update, :edit, :new]}, site_admin: :all,
+         message: '<b>Sorry, Operation not allowed</b>'
+  
   def index
     @blogs = Blog.all
     @page_title += " | #{params[:controller]}"
     @seo_content = params[:controller]
   end
 
-  # GET /blogs/1
-  # GET /blogs/1.json
+
   def show
     @page_title = @blog.title
     @seo_content = @blog.title
   end
 
-  # GET /blogs/new
+
   def new
     @blog = Blog.new
     @page_title += " | #{params[:action]}"
   end
 
-  # GET /blogs/1/edit
+
   def edit
     @page_title += " | #{params[:action]} #{@blog.title}"
   end
 
-  # POST /blogs
-  # POST /blogs.json
+
   def create
     @blog = Blog.new(blog_params)
 
     respond_to do |format|
       if @blog.save
-        format.html { redirect_to @blog, notice: 'Blog was successfully created.' }
-        format.json { render :show, status: :created, location: @blog }
+        format.html {redirect_to @blog, notice: 'Blog was successfully created.'}
       else
-        format.html { render :new }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
+        format.html {render :new}
       end
     end
   end
 
-  # PATCH/PUT /blogs/1
-  # PATCH/PUT /blogs/1.json
+
   def update
     respond_to do |format|
       if @blog.update(blog_params)
-        format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
-        format.json { render :show, status: :ok, location: @blog }
+        format.html {redirect_to @blog, notice: 'Blog was successfully updated.'}
       else
-        format.html { render :edit }
-        format.json { render json: @blog.errors, status: :unprocessable_entity }
+        format.html {render :edit}
+        format.json {render json: @blog.errors, status: :unprocessable_entity}
       end
     end
   end
@@ -65,7 +58,7 @@ class BlogsController < ApplicationController
       @blog.draft!
     end
     respond_to do |format|
-      format.html { redirect_to blogs_path, notice: 'Blog was successfully updated.' }
+      format.html {redirect_to blogs_path, notice: 'Blog was successfully updated.'}
     end
   end
 
@@ -77,7 +70,7 @@ class BlogsController < ApplicationController
       format.html do
         redirect_to blogs_url, notice: 'Blog was successfully destroyed.'
       end
-      format.json { head :no_content }
+      format.json {head :no_content}
     end
   end
 

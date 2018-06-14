@@ -2,8 +2,7 @@
 
 class PortfoliosController < ApplicationController
   before_action :set_portfolio, only: [:edit, :update, :show, :destroy]
-  access all: [:show, :index], user: {except: [:destroy, :create, :update, :edit, :new]}, site_admin: :all,
-         message: '<b>Sorry, Operation not allowed</b>'
+  access all: [:show, :index], user: {except: [:destroy, :create, :update, :edit, :new]}, site_admin: :all
   layout 'portfolio'
 
   def index

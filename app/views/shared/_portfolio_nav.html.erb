@@ -8,12 +8,9 @@
           networking sites or contact information.</p>
       </div>
       <div class="col-sm-2 py-4">
+        <h4 class="text-white">Explore</h4>
         <ul class="list-unstyled">
-          <li><h5><%= link_to "Home", root_path, method: :get, class: 'nav-link white' %></h5></li>
-          <li><h6><%= link_to "Blog", blogs_path, method: :get, class: 'nav-link white' %></h6></li>
-          <li><h6><%= link_to "Portfolio", portfolios_path, method: :get, class: 'nav-link active white' %></h6></li>
-          <l><h6><%= link_to "Contact", contact_path, method: :get, class: 'nav-link white' %></h6></l>
-          <l><h6><%= link_to "About Me", about_path, method: :get, class: 'nav-link white' %></h6></l>
+          <%= nav_helper 'nav-link white' %>
           <%= login_helper %>
         </ul>
       </div>

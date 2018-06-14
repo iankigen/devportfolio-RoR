@@ -2,11 +2,7 @@
   <div class="inner">
     <h3 class="masthead-brand">Ian Kigen</h3>
     <nav class="nav nav-masthead">
-      <%= link_to "Home", root_path, method: :get, class: 'nav-link active' %>
-      <%= link_to "Blog", blogs_path, method: :get, class: 'nav-link' %>
-      <%= link_to "Portfolio", portfolios_path, method: :get, class: 'nav-link' %>
-      <%= link_to "Contact", contact_path, method: :get, class: 'nav-link' %>
-      <%= link_to "About Me", about_path, method: :get, class: 'nav-link'%>
+      <%= nav_helper 'nav-link' %>
       <%= login_helper 'nav-link' %>
     </nav>
   </div>

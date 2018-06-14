@@ -16,9 +16,15 @@
 
 <%= render 'shared/portfolio_nav' %>
 <%= render 'shared/portfolio_masthead' %>
+<div class="container">
+  <h2><%= link_to "New Portfolio", new_portfolio_path if logged_in?(:site_admin)%></h2>
+</div>
 
 <div class="album text-muted">
+
   <div class="container">
+    <h1>Portfolio Items</h1>
+
     <div class="row">
 
       <%= yield %>

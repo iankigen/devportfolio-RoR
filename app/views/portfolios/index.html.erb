@@ -1,1 +1,10 @@
- <%= render partial: 'portfolio_item', collection: @portfolio_items %>
+<div class="container">
+  <h5><%= link_to "New Portfolio", new_portfolio_path if logged_in?(:site_admin) %></h5>
+</div>
+
+<div class="container">
+  <h1>Portfolio Items</h1>
+  <div class="row">
+    <%= render partial: 'portfolio_item', collection: @portfolio_items %>
+  </div>
+</div>

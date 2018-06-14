@@ -45,7 +45,7 @@ laboris nisi ut aliquip ex ea commodo onsequat. Duis aute irure dolor in reprehe
 pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
 laborum.',
     main_image: 'https://via.placeholder.com/600x400',
-    thumb_image: 'https://via.placeholder.com/350x200'
+    thumb_image: 'https://via.placeholder.com/356x280'
   )
 end
 
@@ -60,7 +60,7 @@ laboris nisi ut aliquip ex ea commodo onsequat. Duis aute irure dolor in reprehe
 pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
 laborum.',
     main_image: 'https://via.placeholder.com/600x400',
-    thumb_image: 'https://via.placeholder.com/350x200'
+    thumb_image: 'https://via.placeholder.com/356x280'
   )
 end
 

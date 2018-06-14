@@ -1,0 +1,32 @@
+<div class="collapse bg-inverse black" id="navbarHeader">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 py-4">
+        <h4 class="text-white">About</h4>
+        <p class="text-muted">Add some information about the album below, the author, or any other background context.
+          Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social
+          networking sites or contact information.</p>
+      </div>
+      <div class="col-sm-2 py-4">
+        <ul class="list-unstyled">
+          <li><h5><%= link_to "Home", root_path, method: :get, class: 'nav-link white' %></h5></li>
+          <li><h6><%= link_to "Blog", blogs_path, method: :get, class: 'nav-link white' %></h6></li>
+          <li><h6><%= link_to "Portfolio", portfolios_path, method: :get, class: 'nav-link active white' %></h6></li>
+          <l><h6><%= link_to "Contact", contact_path, method: :get, class: 'nav-link white' %></h6></l>
+          <l><h6><%= link_to "About Me", about_path, method: :get, class: 'nav-link white' %></h6></l>
+          <%= login_helper %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="navbar navbar-light black">
+  <div class="container d-flex justify-content-between">
+    <%= link_to "Ian Kigen", root_path, method: :get, class: 'nav-link white' %>
+    <button class="navbar-toggler gray" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</div>
+

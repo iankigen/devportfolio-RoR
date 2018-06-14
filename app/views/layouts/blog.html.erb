@@ -13,21 +13,8 @@
 
 <body>
 
-<!--Start of nav-->
-<div class="blog-masthead">
-  <div class="container">
-    <nav class="nav blog-nav">
-      <a class="nav-link active" href="#">Home</a>
-      <a class="nav-link" href="#">New features</a>
-      <a class="nav-link" href="#">Press</a>
-      <a class="nav-link" href="#">New hires</a>
-      <a class="nav-link" href="#">About</a>
-    </nav>
-  </div>
-</div>
-<!--End of Nav-->
 
-<%= render 'shared/nav' %>
+<%= render 'shared/blog_nav' %>
 
 <!--Blog Header-->
 <div class="blog-header">
@@ -79,16 +66,8 @@
         </ol>
       </div>
     </div><!-- /.blog-sidebar -->
-    <!--    start of footer-->
-    <footer class="blog-footer">
-      <p>Blog template built for <a href="https://getbootstrap.com">Bootstrap</a> by
-        <a href="https://twitter.com/mdo">@mdo</a>.</p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
-    </footer>
-    <!--    end of footer-->
-    <%= copyright %>
+
+    <%= render 'shared/blog_footer' %>
     <%= source_helper %>
   </div>
 </div>

@@ -1,7 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
-  access all: [:show, :index], user: {except: [:destroy, :create, :update, :edit, :new]}, site_admin: :all,
-         message: '<b>Sorry, Operation not allowed</b>'
+  access all: [:show, :index], user: {except: [:destroy, :create, :update, :edit, :new, :toggle_status]}, site_admin: :all
   layout 'blog'
   
   def index

@@ -1,0 +1,8 @@
+<div class="blog-header">
+  <div class="container">
+    <h1 class="blog-title">Blogs</h1>
+    <p></p>
+    <p class="lead blog-description">An example blog template built with Bootstrap.</p>
+    <%= link_to 'Write a new Blog', new_blog_path if logged_in?(:site_admin)%>
+  </div>
+</div>

@@ -45,13 +45,15 @@ laboris nisi ut aliquip ex ea commodo onsequat. Duis aute irure dolor in reprehe
 pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
 laborum.',
     main_image: 'https://via.placeholder.com/600x400',
-    thumb_image: 'https://via.placeholder.com/350x200'
+    thumb_image: 'https://via.placeholder.com/350x200',
+    position: portfolio
   )
 end
-
+val = 6
 3.times do |portfolio|
+  val += portfolio
   Portfolio.create(
-    title: "Portfolio #{portfolio}",
+    title: "Portfolio #{val}",
     subtitle: 'Angular',
     body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
 tempor incididunt ut labore et
@@ -60,7 +62,9 @@ laboris nisi ut aliquip ex ea commodo onsequat. Duis aute irure dolor in reprehe
 pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
 laborum.',
     main_image: 'https://via.placeholder.com/600x400',
-    thumb_image: 'https://via.placeholder.com/350x200'
+    thumb_image: 'https://via.placeholder.com/350x200',
+    position: val
+
   )
 end
 

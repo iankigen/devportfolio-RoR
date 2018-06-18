@@ -17,5 +17,5 @@
 //= require html.sortable
 //= require turbolinks
 //= require activestorage
-//= require_tree .
 //= require popper
+//= require_tree .

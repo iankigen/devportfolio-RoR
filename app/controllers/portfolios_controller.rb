@@ -6,7 +6,7 @@ class PortfoliosController < ApplicationController
   layout 'portfolio'
 
   def index
-    @portfolio_items = Portfolio.all
+    @portfolio_items = Portfolio.by_position
     @page_title += " | #{params[:controller]}"
   end
 
